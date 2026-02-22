@@ -9,7 +9,8 @@ const teamMembers = [
         role: 'co founder',
         expertise: 'Interior',
         location: 'Tbilisi, Georgia',
-        image: '/member1.svg'
+        image: '/member1.svg',
+        position: 'co founder'
     },
     {
         id: 2,
@@ -17,7 +18,8 @@ const teamMembers = [
         role: 'co founder',
         expertise: 'Interior',
         location: 'Tbilisi, Georgia',
-        image: '/member2.svg'
+        image: '/member2.svg',
+        position: 'co founder'
     },
     {
         id: 3,
@@ -25,7 +27,8 @@ const teamMembers = [
         role: 'co founder',
         expertise: 'Interior',
         location: 'Tbilisi, Georgia',
-        image: '/member3.svg'
+        image: '/member3.svg',
+        position: 'co founder'
     },
     {
         id: 4,
@@ -33,7 +36,8 @@ const teamMembers = [
         role: 'co founder',
         expertise: 'Interior',
         location: 'Tbilisi, Georgia',
-        image: '/member4.svg'
+        image: '/member4.svg',
+        position: 'co founder'
     },
     {
         id: 5,
@@ -41,7 +45,8 @@ const teamMembers = [
         role: 'co founder',
         expertise: 'Interior',
         location: 'Tbilisi, Georgia',
-        image: '/member1.svg'
+        image: '/member1.svg',
+        position: 'co founder'
     },
     {
         id: 6,
@@ -49,7 +54,8 @@ const teamMembers = [
         role: 'co founder',
         expertise: 'Interior',
         location: 'Tbilisi, Georgia',
-        image: '/member1.svg'
+        image: '/member1.svg',
+        position: 'co founder'
     }
 ]
 
@@ -63,7 +69,7 @@ const Collective = () => {
             </div>
             <div className={`grid ${gridColumns} gap-5`}>
                 {teamMembers.map((member) => (
-                    <TeamMember key={member.id} name={member.name} expertise={member.expertise} location={member.location} image={member.image} />
+                    <TeamMember key={member.id} name={member.name} expertise={member.expertise} location={member.location} image={member.image} position={member.position}/>
                 ))}
             </div>
         </div>
