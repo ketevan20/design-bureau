@@ -6,7 +6,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div className='flex flex-col gap-20 mb-20'>
+    <div className='flex flex-col gap-20 mb-20 font-inter'>
       <HeroSection />
       <Contexts />
       <Philosophy />

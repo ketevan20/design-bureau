@@ -1,15 +1,16 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Contexts = () => {
     return (
-        <div className='w-full flex flex-col items-center px-16 '>
+        <div className='w-full flex flex-col items-center px-6 lg:px-16'>
             <div className='w-full max-w-360 flex flex-col gap-12'>
                 <div className='w-full flex justify-between'>
                     <div>
                         <p className='text-[rgba(156,163,175,1)] uppercase font-normal text-[10.5px] leading-3.5 tracking-[4.2px]'>Selected Work</p>
                         <p className='text-[rgba(26,26,26,1)] font-light text-[clamp(18px,2.5vw,30px)] font-cormorant leading-8.75 tracking-[0%]'>Defining Contexts</p>
                     </div>
-                    <p className='self-end text-[rgba(26,26,26,1)] font-normal text-[10.5px] uppercase leading-3.75 tracking-[1.05px]'>See All Projects</p>
+                    <Link href='/projects'><p className='self-end text-[rgba(26,26,26,1)] font-normal text-[10.5px] uppercase leading-3.75 tracking-[1.05px] hover:opacity-50'>See All Projects</p></Link>
                 </div>
 
                 <div className='w-full grid grid-cols-2 auto-rows-[clamp(400px,90vh,620px)] gap-5'>
@@ -17,7 +18,7 @@ const Contexts = () => {
                     <div className='group h-full flex flex-col gap-4 cursor-pointer'>
                         <div className='flex-1 min-h-0 w-full overflow-hidden'>
                             <img
-                                src="/Tskneti_Architecture.svg"
+                                src="/high.jpg"
                                 alt="Stamba Hotel"
                                 className='w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 origin-center transition-all duration-1000 ease-out'
                             />
@@ -73,7 +74,7 @@ const Contexts = () => {
                     <div className='group h-full flex flex-col gap-4 cursor-pointer'>
                         <div className='flex-1 min-h-0 w-full overflow-hidden'>
                             <img
-                                src="/Tskneti_Architecture.svg"
+                                src="/high.jpg"
                                 alt="Stamba Hotel"
                                 className='w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 origin-center transition-all duration-1000 ease-out'
                             />
