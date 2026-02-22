@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${cormorant.variable} bg-[#F2F0EF] relative`}>
+      <body className={`${inter.variable} ${cormorant.variable} bg-[#F2F0EF] relative overflow-x-hidden`}>
         <Header />
           {children}
         <Footer />
