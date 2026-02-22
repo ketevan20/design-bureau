@@ -17,7 +17,7 @@ const schema = Yup.object().shape({
 
 const ContactForm = () => {
   return (
-    <div className='p-6 w-[50%] max-w-135 border border-black bg-[#EEEEEE] 2xl:w-[40%]'>
+    <div className='p-6 w-full sm:w-[60%] md:w-[50%] max-w-135 border border-black bg-[#EEEEEE] 2xl:w-[40%]'>
       <Formik
         initialValues={{ name: "", email: "", message: "", category: "" }}
         onSubmit={(values, { resetForm }) => {

@@ -3,8 +3,8 @@ import React from 'react'
 
 const Collaboration = () => {
     return (
-        <div className='w-full flex flex-col items-center px-16 lg:px-32'>
-            <div className='w-full max-w-360 flex items-stretch p-[clamp(24px,4vw,80px)] border border-[rgba(0,0,0,0.1)]'>
+        <div className='w-full flex flex-col items-center px-6 sm:px-12 lg:px-32'>
+            <div className='w-full max-w-360 flex gap-16 sm:gap-0 flex-col-reverse sm:flex-row items-stretch px-3 pb-16 sm:p-[clamp(24px,4vw,80px)] border border-[rgba(0,0,0,0.1)]'>
 
                 <div className='flex-1 flex flex-col gap-5'>
                     <p className='font-cormorant text-gray-400 uppercase font-light text-[10.5px] tracking-[4.2px]'>Collaborative Spirit</p>
@@ -15,9 +15,9 @@ const Collaboration = () => {
                     <Link href='/studio' className='self-start cursor-pointer font-inter text-neutral-900 uppercase border-b border-black text-[clamp(8px,1.5vw,10.5px)] tracking-[3.15px]'>Learn More</Link>
                 </div>
 
-                <div className='flex-1 flex justify-end'>
+                <div className='flex-1 flex justify-center sm:justify-end'>
                     <div className='aspect-square h-full border border-black flex items-center justify-center'>
-                        <div className='px-4 font-inter font-bold text-[10.5px] leading-tight tracking-[2.1px] text-center uppercase'>
+                        <div className='p-7 sm:px-4 font-inter font-bold text-[10.5px] leading-tight tracking-[2.1px] text-center uppercase'>
                             Design<br /> Georgia — <br />Partner
                         </div>
                     </div>
