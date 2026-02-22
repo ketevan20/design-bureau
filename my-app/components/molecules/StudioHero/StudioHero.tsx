@@ -1,14 +1,12 @@
 import Subtitle from '@/components/atoms/Subtitle/Subtitle'
 import Timeline from '@/components/atoms/Timeline/Timeline'
+import Titile from '@/components/atoms/Title/Title'
 import React from 'react'
 
 const StudioHero = () => {
   return (
     <div className='w-full max-w-360 pt-[clamp(60px,12vh,155px)] flex flex-col justify-between gap-6 lg:gap-12'>
-        <div>
-            <p className='pl-4 border-l border-[#0000005f] font-regular text-[clamp(0.75rem,2vh,0.9rem)] leading-4.25 tracking-[30%] uppercase'>The studio</p>
-            <h1 className='font-cormorant leading-14.5 font-normal text-[clamp(2.5rem,6vh,4rem)] uppercase'>Design as a dialogue</h1>
-        </div>
+        <Titile title='Design as a dialogue' subtitle='The studio'/>
         <div className='w-full h-px bg-[#0000005f]'></div>
         
         <div className='flex gap-5 items-stretch'>

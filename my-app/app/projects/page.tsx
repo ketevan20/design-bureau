@@ -1,8 +1,11 @@
+import Projects from '@/components/organisms/Projects/Projects'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>
+      <Projects />
+    </div>
   )
 }
 
