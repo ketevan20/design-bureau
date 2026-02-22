@@ -11,7 +11,7 @@ const ServiceItem = ({ number, text, categories }: { number: string, text: strin
                 {text}
             </p>
 
-            <div className='flex flex-col gap-6 whitespace-nowrap font-normal text-[12px] tracking-[30%] uppercase underline text-[#505050]'>
+            <div className='flex mb-10 sm:mb-0 flex-col gap-2 sm:gap-6 whitespace-nowrap font-normal text-[12px] tracking-[30%] uppercase underline text-[#505050]'>
                 {categories.map((category, index) => (
                     <p key={index}>{category}</p>
                 ))}

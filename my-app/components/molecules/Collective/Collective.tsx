@@ -65,9 +65,9 @@ const Collective = () => {
         <div className='w-full max-w-360'>
             <div>
                 <Subtitle subtitle='collective' />
-                <p className='max-w-112.5 my-6 font-normal text-[16px] leading-[140%]'>Our strength lies in a collaborative spirit. We are a team of architects, designers, and strategists driven by curiosity.</p>
+                <p className='max-w-112.5 my-3 sm:my-6 font-normal text-[16px] leading-[140%]'>Our strength lies in a collaborative spirit. We are a team of architects, designers, and strategists driven by curiosity.</p>
             </div>
-            <div className={`grid ${gridColumns} gap-5`}>
+            <div className={`grid grid-cols-1 sm:${gridColumns} gap-5`}>
                 {teamMembers.map((member) => (
                     <TeamMember key={member.id} name={member.name} expertise={member.expertise} location={member.location} image={member.image} position={member.position}/>
                 ))}

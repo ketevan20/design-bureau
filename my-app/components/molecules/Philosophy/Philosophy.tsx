@@ -2,8 +2,8 @@ import React from 'react'
 
 const Philosophy = () => {
     return (
-        <div className='w-full bg-[rgba(26,26,26,1)] flex items-center justify-center py-[clamp(40px,20vh,98px)]'>
-            <div className='max-w-3xl px-6 text-center text-white font-cormorant text-[clamp(28px,2.5vw,52.5px)] leading-[clamp(24px,2.5vw,52.5px)]'>
+        <div className='w-full bg-[rgba(26,26,26,1)] flex items-center justify-center py-9 sm:py-[clamp(40px,20vh,98px)]'>
+            <div className='max-w-3xl px-3 sm:px-6 lg:px-16 text-center text-white font-cormorant text-[16px] sm:text-[clamp(28px,2.5vw,52.5px)] leading-[clamp(24px,2.5vw,52.5px)]'>
                 <p className='italic mb-7'>DesignBureau counts on an international team composed by experienced architects, interior and graphic designers.</p>
                 <p className='font-inter inline border-b border-white text-[clamp(8px,1.5vw,10.5px)] leading-3.75 tracking-[3.15px]'>OUR PHILOSOPHY</p>
             </div>

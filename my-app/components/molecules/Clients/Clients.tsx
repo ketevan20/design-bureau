@@ -32,17 +32,17 @@ const Clients = () => {
                     animate={{ x: ['-50%', '0%'] }}
                     transition={{
                         ease: "linear",
-                        duration: 20,
+                        duration: 10,
                         repeat: Infinity
                     }}
                 >
-                    <div className="flex items-center gap-32 pr-32">
+                    <div className="flex items-center gap-16 pr-16 sm:gap-32 sm:pr-32">
                         {logos1.map((logo, index) => (
                             <img key={`logo-1-${index}`} src={logo} alt="client logo" />
                         ))}
                     </div>
 
-                    <div className="flex items-center gap-32 pr-32">
+                    <div className="flex items-center gap-16 pr-16 sm:gap-32 sm:pr-32">
                         {logos1.map((logo, index) => (
                             <img key={`logo-2-${index}`} src={logo} alt="client logo" />
                         ))}
@@ -54,19 +54,19 @@ const Clients = () => {
                     animate={{ x: ['0%', '-50%'] }}
                     transition={{
                         ease: "linear",
-                        duration: 20,
+                        duration: 10,
                         repeat: Infinity
                     }}
                 >
-                    <div className="flex items-center gap-32 pr-32">
+                    <div className="flex items-center gap-16 pr-16 sm:gap-32 sm:pr-32">
                         {logos2.map((logo, index) => (
-                            <img key={`logo-1-${index}`} src={logo} alt="client logo" />
+                            <img key={`logo-1-${index}`} src={logo} alt="client logo" className='max-sm:h-16'/>
                         ))}
                     </div>
 
-                    <div className="flex items-center gap-32 pr-32">
+                    <div className="flex items-center gap-16 pr-16 sm:gap-32 sm:pr-32">
                         {logos2.map((logo, index) => (
-                            <img key={`logo-2-${index}`} src={logo} alt="client logo" />
+                            <img key={`logo-2-${index}`} src={logo} alt="client logo" className='max-sm:h-16'/>
                         ))}
                     </div>
                 </motion.div>
