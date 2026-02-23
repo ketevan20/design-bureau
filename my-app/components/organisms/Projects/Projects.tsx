@@ -1,3 +1,4 @@
+'use client'
 import ProjectsHero from '@/components/molecules/ProjectsHero/ProjectsHero'
 import React from 'react'
 
