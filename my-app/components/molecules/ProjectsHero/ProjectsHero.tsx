@@ -102,7 +102,7 @@ const ProjectsHero = () => {
     const filteredProjects = activeCategory === 'All' ? projects : projects.filter((project) => project.category === activeCategory)
 
     return (
-        <div className='w-full max-w-360 min-h-screen pt-[clamp(60px,12vh,155px)] flex flex-col gap-6 lg:gap-12'>
+        <div className='w-full max-w-360 pt-[clamp(60px,12vh,155px)] flex flex-col gap-6 lg:gap-12'>
             <div className='w-full flex justify-between gap-8'>
                 <Title title='Index of Works' subtitle='Our work' />
                 <div className='mt-8 self-end sm:mt-0 flex flex-col md:flex-row gap-3 md:gap-10 md:items-end font-medium text-[12px] leading-[100%] tracking-[2px] sm:tracking-[2.5px] text-black uppercase'>
