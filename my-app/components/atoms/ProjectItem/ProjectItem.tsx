@@ -11,7 +11,7 @@ const ProjectItem = ({ name, expertise, location, image, year }: ProjectItemProp
     return (
         <div className='group p-3 bg-white flex flex-col gap-3 h-full overflow-hidden cursor-pointer'>
             <div className='relative overflow-hidden'>
-                <img src={image} alt="" className='aspect-400/267 w-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 origin-center transition-all duration-1000 ease-out' />
+                <img src={image} alt="" loading="lazy" className='aspect-400/267 w-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 origin-center transition-all duration-1000 ease-out' />
                 <button className='opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out
                     absolute z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                     bg-[#ffffff2b] backdrop-blur-sm
