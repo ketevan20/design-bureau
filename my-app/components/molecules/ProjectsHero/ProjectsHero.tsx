@@ -1,7 +1,7 @@
 'use client'
 import ProjectItem from '@/components/atoms/ProjectItem/ProjectItem'
 import Title from '@/components/atoms/Title/Title'
-import React, { act, useState } from 'react'
+import React, { useState } from 'react'
 
 const projects = [
     {
