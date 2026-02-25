@@ -23,7 +23,7 @@ const logos2 = [
 
 const Clients = () => {
     return (
-        <div className='w-full max-w-360 overflow-hidden'>
+        <div className='w-full max-w-480 overflow-hidden'>
             <Subtitle subtitle='clients' />
 
             <div className="mt-6 flex flex-col gap-20 overflow-hidden">

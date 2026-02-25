@@ -5,7 +5,7 @@ const HeroSection = () => {
     return (
         <div className='w-full h-dvh flex flex-col items-center overflow-hidden px-3 sm:px-6 lg:px-16'>
 
-            <div className='w-full h-full pt-[clamp(60px,12vh,155px)] max-w-360 flex flex-col justify-between gap-[clamp(1rem,4vh,4rem)] xl:gap-[clamp(1rem,8vh,4rem)] '>
+            <div className='w-full h-full pt-[clamp(60px,12vh,155px)] max-w-480 flex flex-col justify-between gap-[clamp(1rem,4vh,4rem)] xl:gap-[clamp(1rem,8vh,4rem)] '>
 
                 <div className='flex-none flex flex-col gap-[clamp(0.5rem,4vh,3rem)]'>
                     <p className='max-w-200 font-cormorant font-normal text-[16px] sm:text-[clamp(2rem,4vh,3rem)] leading-[125%]'>

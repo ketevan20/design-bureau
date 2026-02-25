@@ -4,7 +4,7 @@ import React from 'react'
 const Contexts = () => {
     return (
         <div className='w-full flex flex-col items-center px-3 sm:px-6 lg:px-16'>
-            <div className='w-full max-w-360 flex flex-col gap-6 sm:gap-12'>
+            <div className='w-full max-w-480 flex flex-col gap-6 sm:gap-12'>
                 <div className='w-full flex justify-between'>
                     <div>
                         <p className='text-[rgba(156,163,175,1)] uppercase font-normal text-[10.5px] leading-3.5 tracking-[4.2px]'>Selected Work</p>

@@ -1,6 +1,8 @@
 'use client'
 import ProjectItem from '@/components/atoms/ProjectItem/ProjectItem'
 import Title from '@/components/atoms/Title/Title'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { motion } from 'motion/react'
 import React, { useState } from 'react'
 
 const projects = [
@@ -102,7 +104,7 @@ const ProjectsHero = () => {
     const filteredProjects = activeCategory === 'All' ? projects : projects.filter((project) => project.category === activeCategory)
 
     return (
-        <div className='w-full max-w-360 pt-[clamp(60px,12vh,155px)] flex flex-col gap-6 lg:gap-12'>
+        <div className='w-full max-w-480 pt-[clamp(60px,12vh,155px)] flex flex-col gap-6 lg:gap-12'>
             <div className='w-full flex justify-between gap-8'>
                 <Title title='Index of Works' subtitle='Our work' />
                 <div className='mt-8 self-end sm:mt-0 flex flex-col md:flex-row gap-3 md:gap-10 md:items-end font-medium text-[12px] leading-[100%] tracking-[2px] sm:tracking-[2.5px] text-black uppercase'>
@@ -113,15 +115,22 @@ const ProjectsHero = () => {
             </div>
             <div className='w-full h-px bg-[#0000005f]'></div>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5'>
-                {filteredProjects.map((project) => (
-                    <ProjectItem
+                {filteredProjects.map((project, i) => (
+                    <motion.div
                         key={project.id}
-                        name={project.name}
-                        expertise={project.expertise}
-                        location={project.location}
-                        image={project.image}
-                        year={project.year}
-                    />
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: i * 0.1, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                    >
+                        <ProjectItem
+                            name={project.name}
+                            expertise={project.expertise}
+                            location={project.location}
+                            image={project.image}
+                            year={project.year}
+                        />
+                    </motion.div>
                 ))}
             </div>
         </div>
