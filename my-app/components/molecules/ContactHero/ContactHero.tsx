@@ -4,7 +4,7 @@ import React from 'react'
 
 const ContactHero = () => {
   return (
-    <div className='w-full max-w-360 pt-[clamp(60px,12vh,155px)] flex flex-col gap-6 lg:gap-12'>
+    <div className='w-full max-w-480 pt-[clamp(60px,12vh,155px)] flex flex-col gap-6 lg:gap-12'>
         <Title title='Contact' subtitle='get in touch'/>
         <div className='w-full h-px bg-[#0000005f]'></div>
         <div className='flex max-sm:gap-12 md:gap-12 sm:justify-between flex-col sm:flex-row'>

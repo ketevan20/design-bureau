@@ -12,7 +12,7 @@ const Header = () => {
     return (
         <>
             <div className='fixed z-1000 font-inter w-full flex items-center justify-center bg-white px-3 py-4 md:px-6 lg:px-16'>
-                <div className='w-full max-w-360 flex items-center justify-between leading-[100%] tracking-[2.1px] text-black'>
+                <div className='w-full max-w-480 flex items-center justify-between leading-[100%] tracking-[2.1px] text-black'>
                     <Link href='/'><p className='text-[21px] font-light uppercase'>design<span className='font-black'>bureau</span></p></Link>
                     <div className='hidden sm:flex font-medium text-[12px] uppercase  gap-4 md:gap-10.5'>
                         <Link href='/studio' className={`${pathname === '/studio' ? 'opacity-100' : 'opacity-50'} hover:opacity-100`}>Studio</Link>

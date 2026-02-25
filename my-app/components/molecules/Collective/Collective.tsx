@@ -62,12 +62,12 @@ const teamMembers = [
 const Collective = () => {
     const gridColumns = teamMembers.length === 1 ? 'grid-cols-1' : teamMembers.length === 2 ? 'grid-cols-2' : 'grid-cols-3';
     return (
-        <div className='w-full max-w-360'>
+        <div className='w-full max-w-480'>
             <div>
                 <Subtitle subtitle='collective' />
                 <p className='max-w-112.5 my-3 sm:my-6 font-normal text-[16px] leading-[140%]'>Our strength lies in a collaborative spirit. We are a team of architects, designers, and strategists driven by curiosity.</p>
             </div>
-            <div className={`grid grid-cols-1 sm:${gridColumns} gap-5`}>
+            <div className={`grid ${gridColumns} gap-5 max-sm:grid-cols-1 max-md:grid-cols-2`}>
                 {teamMembers.map((member) => (
                     <TeamMember key={member.id} name={member.name} expertise={member.expertise} location={member.location} image={member.image} position={member.position}/>
                 ))}
