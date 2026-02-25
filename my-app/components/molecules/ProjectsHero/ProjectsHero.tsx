@@ -3,7 +3,8 @@ import ProjectItem from '@/components/atoms/ProjectItem/ProjectItem'
 import Title from '@/components/atoms/Title/Title'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { motion } from 'motion/react'
-import React, { useState } from 'react'
+import { body } from 'motion/react-client'
+import React, { useEffect, useRef, useState } from 'react'
 
 const projects = [
     {
@@ -95,13 +96,51 @@ const projects = [
         image: '/Tskneti_Architecture.svg',
         year: '2024',
         category: 'Architecture'
+    },
+    {
+        id: '11',
+        name: 'Tskneti Architecture',
+        expertise: 'Architecture',
+        location: 'Tbilisi, Georgia',
+        image: '/Tskneti_Architecture.svg',
+        year: '2024',
+        category: 'Architecture'
+    },
+    {
+        id: '12',
+        name: 'APARTMENT WITH CITYSCAPE',
+        expertise: 'Interior',
+        location: 'Tbilisi, Georgia',
+        image: '/project.svg',
+        year: '2024',
+        category: 'Interior'
+    },
+    {
+        id: '13',
+        name: 'Tskneti Architecture',
+        expertise: 'Architecture',
+        location: 'Tbilisi, Georgia',
+        image: '/Tskneti_Architecture.svg',
+        year: '2024',
+        category: 'Architecture'
     }
 ]
 
 const ProjectsHero = () => {
     const [activeCategory, setActiveCategory] = useState('All');
+    const [currentPage, setCurrentPage] = useState(1);
+    const [pageSize, setPageSize] = useState(12);
+    const sectionRef = useRef<HTMLDivElement>(null);
 
     const filteredProjects = activeCategory === 'All' ? projects : projects.filter((project) => project.category === activeCategory)
+
+    const totalPages = Math.ceil(filteredProjects.length / pageSize);
+    const startIndex = (currentPage - 1) * pageSize;
+    const paginatedProjects = filteredProjects.slice(startIndex, startIndex + pageSize);
+
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [activeCategory])
 
     return (
         <div className='w-full max-w-480 pt-[clamp(60px,12vh,155px)] flex flex-col gap-6 lg:gap-12'>
@@ -113,9 +152,9 @@ const ProjectsHero = () => {
                     <p onClick={() => setActiveCategory('Interior')} className={`${activeCategory == 'Interior' ? 'opacity-100' : 'opacity-50'} cursor-pointer  hover:opacity-100`}>interior</p>
                 </div>
             </div>
-            <div className='w-full h-px bg-[#0000005f]'></div>
+            <div ref={sectionRef} className='w-full h-px bg-[#0000005f]'></div>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5'>
-                {filteredProjects.map((project, i) => (
+                {paginatedProjects.map((project, i) => (
                     <motion.div
                         key={project.id}
                         initial={{ opacity: 0, y: 20 }}
@@ -133,6 +172,54 @@ const ProjectsHero = () => {
                     </motion.div>
                 ))}
             </div>
+            {
+                totalPages > 1 &&
+                <div className='flex flex-col items-center justify-center'>
+                    <p className='text-[8px] tracking-[10%] uppercase text-gray-400 mb-4'>Showing {currentPage} of {totalPages} pages</p>
+                    <div className='flex items-center gap-2 sm:gap-6 '>
+                        <button
+                            onClick={() => {
+                                setCurrentPage(prev => Math.max(prev - 1, 1));
+                                window.scrollTo(0, 0);
+                            }}
+                            disabled={currentPage === 1}
+                            className='disabled:text-gray-400 disabled:opacity-50 disabled:border-0 disabled:hover:bg-transparent cursor-pointer border border-gray-400 rounded-full p-2 hover:bg-black hover:text-white'><ArrowLeft size={14} /></button>
+                        <div className='flex gap-2 sm:gap-4 text-[10px] tracking-[20%] uppercase text-gray-400'>
+                            {Array.from({ length: totalPages }, (_, i) => i + 1)
+                                .filter(page => {
+                                    const start = Math.max(1, Math.min(currentPage - 1, totalPages - 2));
+                                    const end = Math.min(totalPages, start + 2);
+                                    return page >= start && page <= end;
+                                })
+                                .map(page => (
+                                    <button
+                                        key={page}
+                                        onClick={() => {
+                                            setCurrentPage(page);
+                                            sectionRef.current?.scrollIntoView({
+                                                behavior: 'smooth'
+                                            })
+                                        }}
+                                        className={`w-8 h-8 text-[10px] uppercase tracking-widest transition-all
+                                                ${currentPage === page
+                                                ? "font-bold border-b border-black"
+                                                : "opacity-50 hover:opacity-100"
+                                            }`}
+                                    >
+                                        {page}
+                                    </button>
+                                ))}
+                        </div>
+                        <button
+                            onClick={() => {
+                                setCurrentPage(prev => Math.min(prev + 1, totalPages));
+                                window.scrollTo(0, 0);
+                            }}
+                            disabled={currentPage === totalPages}
+                            className='disabled:text-gray-400 disabled:opacity-50 disabled:border-0 disabled:hover:bg-transparent cursor-pointer border border-gray-400 rounded-full p-2 hover:bg-black hover:text-white'><ArrowRight size={14} /></button>
+                    </div>
+                </div>
+            }
         </div>
     )
 }
