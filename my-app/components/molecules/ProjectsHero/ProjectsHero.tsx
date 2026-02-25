@@ -4,6 +4,7 @@ import Title from '@/components/atoms/Title/Title'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { motion } from 'motion/react'
 import { body } from 'motion/react-client'
+import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
 
 const projects = [
@@ -155,21 +156,22 @@ const ProjectsHero = () => {
             <div ref={sectionRef} className='w-full h-px bg-[#0000005f]'></div>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5'>
                 {paginatedProjects.map((project, i) => (
-                    <motion.div
-                        key={project.id}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: i * 0.1, ease: "easeOut" }}
-                        viewport={{ once: true }}
-                    >
-                        <ProjectItem
-                            name={project.name}
-                            expertise={project.expertise}
-                            location={project.location}
-                            image={project.image}
-                            year={project.year}
-                        />
-                    </motion.div>
+                    <Link href={`projects/${project.id}`} key={project.id}>
+                        <motion.div                            
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: i * 0.1, ease: "easeOut" }}
+                            viewport={{ once: true }}
+                        >
+                            <ProjectItem
+                                name={project.name}
+                                expertise={project.expertise}
+                                location={project.location}
+                                image={project.image}
+                                year={project.year}
+                            />
+                        </motion.div>
+                    </Link>
                 ))}
             </div>
             {
