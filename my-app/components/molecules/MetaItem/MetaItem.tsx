@@ -28,11 +28,11 @@ const MetaItem = () => {
                         <p className='text-black font-medium mt-1'>Tbilisi, georgia</p>
                     </div>
                     <div>
-                        <p className='text-[#949494] font-regular'>category</p>
+                        <p className='text-[#949494] font-regular'>date</p>
                         <p className='text-black font-medium mt-1'>2024</p>
                     </div>
                     <div>
-                        <p className='text-[#949494] font-regular'>category</p>
+                        <p className='text-[#949494] font-regular'>program</p>
                         <p className='text-black font-medium mt-1'>commercial</p>
                     </div>
                 </div>
