@@ -6,7 +6,6 @@ const teamMembers = [
     {
         id: 1,
         name: 'Nia Mgaloblishvili',
-        role: 'co founder',
         expertise: 'Interior',
         location: 'Tbilisi, Georgia',
         image: '/member1.svg',
@@ -15,7 +14,6 @@ const teamMembers = [
     {
         id: 2,
         name: 'Nia Mgaloblishvili',
-        role: 'co founder',
         expertise: 'Interior',
         location: 'Tbilisi, Georgia',
         image: '/member2.svg',
@@ -24,7 +22,6 @@ const teamMembers = [
     {
         id: 3,
         name: 'Nia Mgaloblishvili',
-        role: 'co founder',
         expertise: 'Interior',
         location: 'Tbilisi, Georgia',
         image: '/member3.svg',
@@ -33,7 +30,6 @@ const teamMembers = [
     {
         id: 4,
         name: 'Nia Mgaloblishvili',
-        role: 'co founder',
         expertise: 'Interior',
         location: 'Tbilisi, Georgia',
         image: '/member4.svg',
@@ -42,7 +38,6 @@ const teamMembers = [
     {
         id: 5,
         name: 'Nia Mgaloblishvili',
-        role: 'co founder',
         expertise: 'Interior',
         location: 'Tbilisi, Georgia',
         image: '/member1.svg',
@@ -51,7 +46,6 @@ const teamMembers = [
     {
         id: 6,
         name: 'Nia Mgaloblishvili',
-        role: 'co founder',
         expertise: 'Interior',
         location: 'Tbilisi, Georgia',
         image: '/member1.svg',

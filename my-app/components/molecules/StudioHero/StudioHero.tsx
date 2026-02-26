@@ -12,7 +12,7 @@ const StudioHero = () => {
         <div className='flex flex-col sm:flex-row gap-5 items-stretch'>
             <div className='w-full sm:shrink-0 sm:max-w-[30%]'>
                 <img 
-                  src="team.svg" 
+                  src="/DB_team_01.gif" 
                   alt="The team" 
                   className='w-full h-full sm:aspect-square object-cover'
                 />
