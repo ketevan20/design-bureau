@@ -3,7 +3,7 @@ import { ProjectType } from '@/Types/Types'
 import React from 'react'
 
 async function getProjects() {
-  const res = await fetch('https://design-bureau-api.onrender.com/projects');
+  const res = await fetch('https://design-bureau-api.onrender.com/projects', { cache: "no-store" });
   return res.json();
 }
 
