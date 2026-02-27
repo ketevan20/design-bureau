@@ -12,7 +12,6 @@ async function getTeamMembers() {
 
 const Studio = async () => {
   const members = await getTeamMembers();
-  console.log(members);
   return (
     <div className='relative flex flex-col items-center gap-20 mb-20 px-3 sm:px-6 lg:px-16 font-inter'>
         <StudioHero />
