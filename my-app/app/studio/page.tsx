@@ -1,11 +1,12 @@
+import Loader from '@/components/atoms/Loader/Loader'
 import Studio from '@/components/organisms/Studio/Studio'
-import React from 'react'
+import React, { Suspense } from 'react'
 
 const page = () => {
   return (
-    <div>
+    <Suspense fallback={<Loader />}>
       <Studio />
-    </div>
+    </Suspense>
   )
 }
 

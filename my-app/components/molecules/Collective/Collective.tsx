@@ -1,69 +1,22 @@
 import Subtitle from '@/components/atoms/Subtitle/Subtitle'
 import TeamMember from '@/components/atoms/TeamMember/TeamMember';
+import { TeamMemberType } from '@/Types/Types';
 import React from 'react'
 
-const teamMembers = [
-    {
-        id: 1,
-        name: 'Nia Mgaloblishvili',
-        expertise: 'Interior',
-        location: 'Tbilisi, Georgia',
-        image: '/member1.svg',
-        position: 'co founder'
-    },
-    {
-        id: 2,
-        name: 'Nia Mgaloblishvili',
-        expertise: 'Interior',
-        location: 'Tbilisi, Georgia',
-        image: '/member2.svg',
-        position: 'co founder'
-    },
-    {
-        id: 3,
-        name: 'Nia Mgaloblishvili',
-        expertise: 'Interior',
-        location: 'Tbilisi, Georgia',
-        image: '/member3.svg',
-        position: 'co founder'
-    },
-    {
-        id: 4,
-        name: 'Nia Mgaloblishvili',
-        expertise: 'Interior',
-        location: 'Tbilisi, Georgia',
-        image: '/member4.svg',
-        position: 'co founder'
-    },
-    {
-        id: 5,
-        name: 'Nia Mgaloblishvili',
-        expertise: 'Interior',
-        location: 'Tbilisi, Georgia',
-        image: '/member1.svg',
-        position: 'co founder'
-    },
-    {
-        id: 6,
-        name: 'Nia Mgaloblishvili',
-        expertise: 'Interior',
-        location: 'Tbilisi, Georgia',
-        image: '/member1.svg',
-        position: 'co founder'
-    }
-]
+type CollectiveProps = {
+    teamMembers: TeamMemberType[];
+}
 
-const Collective = () => {
-    const gridColumns = teamMembers.length === 1 ? 'grid-cols-1' : teamMembers.length === 2 ? 'grid-cols-2' : 'grid-cols-3';
+const Collective = ({teamMembers}: CollectiveProps) => {
     return (
         <div className='w-full max-w-480'>
             <div>
                 <Subtitle subtitle='collective' />
                 <p className='max-w-112.5 my-3 sm:my-6 font-normal text-[16px] leading-[140%]'>Our strength lies in a collaborative spirit. We are a team of architects, designers, and strategists driven by curiosity.</p>
             </div>
-            <div className={`grid ${gridColumns} gap-5 max-sm:grid-cols-1 max-md:grid-cols-2`}>
+            <div className={`grid gap-5 grid-cols-3 max-sm:grid-cols-1 max-md:grid-cols-2`}>
                 {teamMembers.map((member) => (
-                    <TeamMember key={member.id} name={member.name} expertise={member.expertise} location={member.location} image={member.image} position={member.position}/>
+                    <TeamMember key={member._id} name={member.name} expertise={member.expertise} location={member.location} image={member.url} position={member.position}/>
                 ))}
             </div>
         </div>

@@ -1,11 +1,18 @@
-'use client'
 import ProjectsHero from '@/components/molecules/ProjectsHero/ProjectsHero'
+import { ProjectType } from '@/Types/Types'
 import React from 'react'
 
-const Projects = () => {
+async function getProjects() {
+  const res = await fetch('https://design-bureau-api.onrender.com/projects');
+  return res.json();
+}
+
+const Projects = async () => {
+  const allProjects = await getProjects();
+
   return (
     <div className='relative flex flex-col items-center gap-20 mb-20 px-3 sm:px-6 lg:px-16 font-inter'>
-        <ProjectsHero />
+        <ProjectsHero projects={allProjects}/>
     </div>
   )
 }

@@ -1,12 +1,15 @@
+import Loader from '@/components/atoms/Loader/Loader'
 import ProjectMeta from '@/components/organisms/ProjectMeta/ProjectMeta'
-import React from 'react'
+import React, { Suspense } from 'react'
 
-const page = () => {
+const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = await params
+
   return (
-    <div>
-        <ProjectMeta />
-    </div>
+    <Suspense fallback={<Loader />}>
+      <ProjectMeta slug={slug} />
+    </Suspense>
   )
 }
 
-export default page
+export default Page
