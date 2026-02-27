@@ -11,7 +11,7 @@ const TeamMember = ({ name, expertise, location, image, position }: TeamMemberPr
     return (
         <div className='group p-3 bg-white flex flex-col gap-3 h-full overflow-hidden'>
             <div className='overflow-hidden'>
-                <img src={image} alt="" className='aspect-400/267 w-full object-cover overflow-hidden group-hover:scale-110 origin-center transition-all duration-1000 ease-out' />
+                <img src={image} alt="" className='aspect-400/267 w-full object-cover grayscale overflow-hidden group-hover:scale-110 origin-center transition-all duration-1000 ease-out' />
             </div>
             <div className='flex items-center justify-between'>
                 <div>
