@@ -1,11 +1,12 @@
+import Loader from '@/components/atoms/Loader/Loader';
 import Projects from '@/components/organisms/Projects/Projects'
-import React from 'react'
+import React, { Suspense } from 'react'
 
-const page = () => {
+const page = async () => {
   return (
-    <div>
+    <Suspense fallback={<Loader />}>
       <Projects />
-    </div>
+    </Suspense>
   )
 }
 

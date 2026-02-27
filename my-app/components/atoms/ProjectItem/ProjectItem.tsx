@@ -5,7 +5,7 @@ type ProjectItemProps = {
     expertise: string;
     location: string;
     image: string;
-    year: string;
+    year: number;
 }
 const ProjectItem = ({ name, expertise, location, image, year }: ProjectItemProps) => {
     return (

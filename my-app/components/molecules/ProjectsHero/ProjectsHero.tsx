@@ -1,145 +1,18 @@
 'use client'
 import ProjectItem from '@/components/atoms/ProjectItem/ProjectItem'
 import Title from '@/components/atoms/Title/Title'
+import { ProjectType } from '@/Types/Types'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { motion } from 'motion/react'
 import { body } from 'motion/react-client'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
 
-const projects = [
-    {
-        id: '1',
-        slug: 'apartment-with-cityscape',
-        name: 'APARTMENT WITH CITYSCAPE',
-        location: 'Tbilisi, Georgia',
-        coverPicture: '/project.svg',
-        year: '2024',
-        category: 'interior',
-        program: 'commercial',
-        status: 'completed',
-        area: '150',
-        description: 'Located on the 22nd floor of King David Residences in Tbilisi, this apartment was designed as a calm retreat for a frequent traveler. A monochrome palette, curated furniture, and panoramic city views create a refined, hotel-like atmosphere enriched with personal and cultural details.',
-        text: "This captivating apartment is on the 22th floor of King David Residences, an iconic tower that graces the center of Tbilisi, Georgia. It stands as one of the city’s tallest landmarks. This residence serves as a serene retreat for its owner, a frequent visitor to Tbilisi for work. Inspired by the owner’s transient lifestyle, the design captures the sleek aesthetics of a hotel room while introducing elements that impart a comforting sense of coziness. The primary focus of this design venture was to create an inviting interior with a pristine aesthetic, enriched by captivating details that cater to both guests and the owner during moments of personal reflection. The apartment’s extensive windows frame a breathtaking view of Tbilisi, establishing a dynamic ambiance that evolves with the changing natural light. Thoughtfully placed blinds allow residents to control the modulation of light intensity, creating an immersive and personalized ambiance. Furniture takes center stage in crafting a visually striking narrative, featuring a carefully curated selection of iconic pieces seamlessly integrated with Marble Domino tables (design by Madam Bozarjiants), showcasing a lucky number significant to the owner. An asymmetric rug (designed by Madam Bozarjiants), inspired by the works of Georgian artist Vera Pagava, injects an artistic dimension into the living space, infusing a touch of cultural richness into the contemporary design.",
-        images: [
-            'apartment-1.svg',
-            'apartment-2.svg',
-            'apartment-3.svg',
-            'apartment-4.svg',
-            'apartment-5.svg'
-        ]
-    },
-    {
-        id: '2',
-        name: 'Tskneti Architecture',
-        expertise: 'Architecture',
-        location: 'Tbilisi, Georgia',
-        coverPicture: '/Tskneti_Architecture.svg',
-        year: '2024',
-        category: 'Architecture'
-    },
-    {
-        id: '3',
-        name: 'APARTMENT WITH CITYSCAPE',
-        expertise: 'Interior',
-        location: 'Tbilisi, Georgia',
-        coverPicture: '/project.svg',
-        year: '2024',
-        category: 'Interior'
-    },
-    {
-        id: '4',
-        name: 'Tskneti Architecture',
-        expertise: 'Architecture',
-        location: 'Tbilisi, Georgia',
-        coverPicture: '/Tskneti_Architecture.svg',
-        year: '2024',
-        category: 'Architecture'
-    },
-    {
-        id: '5',
-        name: 'APARTMENT WITH CITYSCAPE',
-        expertise: 'Interior',
-        location: 'Tbilisi, Georgia',
-        coverPicture: '/project.svg',
-        year: '2024',
-        category: 'Interior'
-    },
-    {
-        id: '6',
-        name: 'Tskneti Architecture',
-        expertise: 'Architecture',
-        location: 'Tbilisi, Georgia',
-        coverPicture: '/Tskneti_Architecture.svg',
-        year: '2024',
-        category: 'Architecture'
-    },
-    {
-        id: '7',
-        name: 'APARTMENT WITH CITYSCAPE',
-        expertise: 'Interior',
-        location: 'Tbilisi, Georgia',
-        coverPicture: '/project.svg',
-        year: '2024',
-        category: 'Interior'
-    },
-    {
-        id: '8',
-        name: 'Tskneti Architecture',
-        expertise: 'Architecture',
-        location: 'Tbilisi, Georgia',
-        coverPicture: '/Tskneti_Architecture.svg',
-        year: '2024',
-        category: 'Architecture'
-    },
-    {
-        id: '9',
-        name: 'APARTMENT WITH CITYSCAPE',
-        expertise: 'Interior',
-        location: 'Tbilisi, Georgia',
-        coverPicture: '/project.svg',
-        year: '2024',
-        category: 'Interior'
-    },
-    {
-        id: '10',
-        name: 'Tskneti Architecture',
-        expertise: 'Architecture',
-        location: 'Tbilisi, Georgia',
-        coverPicture: '/Tskneti_Architecture.svg',
-        year: '2024',
-        category: 'Architecture'
-    },
-    {
-        id: '11',
-        name: 'Tskneti Architecture',
-        expertise: 'Architecture',
-        location: 'Tbilisi, Georgia',
-        coverPicture: '/Tskneti_Architecture.svg',
-        year: '2024',
-        category: 'Architecture'
-    },
-    {
-        id: '12',
-        name: 'APARTMENT WITH CITYSCAPE',
-        expertise: 'Interior',
-        location: 'Tbilisi, Georgia',
-        coverPicture: '/project.svg',
-        year: '2024',
-        category: 'Interior'
-    },
-    {
-        id: '13',
-        name: 'Tskneti Architecture',
-        expertise: 'Architecture',
-        location: 'Tbilisi, Georgia',
-        coverPicture: '/Tskneti_Architecture.svg',
-        year: '2024',
-        category: 'Architecture'
-    }
-]
+type ProjectsHeroProps = {
+  projects: ProjectType[];
+};
 
-const ProjectsHero = () => {
+const ProjectsHero = ({ projects }: ProjectsHeroProps) => {
     const [activeCategory, setActiveCategory] = useState('All');
     const [currentPage, setCurrentPage] = useState(1);
     const [pageSize, setPageSize] = useState(12);
@@ -161,14 +34,14 @@ const ProjectsHero = () => {
                 <Title title='Index of Works' subtitle='Our work' />
                 <div className='mt-8 self-end sm:mt-0 flex flex-col md:flex-row gap-3 md:gap-10 md:items-end font-medium text-[12px] leading-[100%] tracking-[2px] sm:tracking-[2.5px] text-black uppercase'>
                     <p onClick={() => setActiveCategory('All')} className={`${activeCategory == 'All' ? 'opacity-100' : 'opacity-50'} cursor-pointer  hover:opacity-100`}>All</p>
-                    <p onClick={() => setActiveCategory('Architecture')} className={`${activeCategory == 'Architecture' ? 'opacity-100' : 'opacity-50'} cursor-pointer  hover:opacity-100`}>Architecture</p>
-                    <p onClick={() => setActiveCategory('Interior')} className={`${activeCategory == 'Interior' ? 'opacity-100' : 'opacity-50'} cursor-pointer  hover:opacity-100`}>interior</p>
+                    <p onClick={() => setActiveCategory('architecture')} className={`${activeCategory == 'architecture' ? 'opacity-100' : 'opacity-50'} cursor-pointer  hover:opacity-100`}>Architecture</p>
+                    <p onClick={() => setActiveCategory('interior')} className={`${activeCategory == 'interior' ? 'opacity-100' : 'opacity-50'} cursor-pointer  hover:opacity-100`}>interior</p>
                 </div>
             </div>
             <div ref={sectionRef} className='w-full h-px bg-[#0000005f]'></div>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 items-stretch'>
                 {paginatedProjects.map((project, i) => (
-                    <Link href={`projects/${project.id}`} key={project.id}>
+                    <Link href={`projects/${project.slug}`} key={project._id}>
                         <motion.div                            
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -180,7 +53,7 @@ const ProjectsHero = () => {
                                 name={project.name}
                                 expertise={project.category}
                                 location={project.location}
-                                image={project.coverPicture}
+                                image={project.url}
                                 year={project.year}
                             />
                         </motion.div>
