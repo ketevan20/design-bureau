@@ -2,8 +2,7 @@ import MetaItem from '@/components/molecules/MetaItem/MetaItem'
 import React from 'react'
 
 async function getProject(slug: string) {
-  const res = await fetch(
-    `https://design-bureau-api.onrender.com/projects/slug/${slug}`)
+  const res = await fetch(`https://design-bureau-api.onrender.com/projects/slug/${slug}`, { cache: "no-store" })
   return res.json()
 }
 
