@@ -10,13 +10,13 @@ const HeroSection = () => {
                 <div className='flex-none flex flex-col gap-[clamp(0.5rem,4vh,3rem)]'>
                     <p className='max-w-200 font-cormorant font-normal text-[16px] sm:text-[clamp(2rem,4vh,3rem)] leading-[125%]'>
                         <span className='font-bold text-[24px] sm:text-[clamp(2.5rem,6vh,4rem)] uppercase'>
-                            architecture & design studio
+                            architecture & design<br /> studio
                         </span> Based in Tbilisi, Georgia.
                     </p>
 
                     <div className='w-full flex'>
                         <div className='flex-1'>
-                            <Link href='/projects'>
+                            <Link href='/projects' className='inline-block'>
                                 <p className='text-[16px] sm:text-[clamp(0.8rem,2vh,1rem)] font-black leading-none tracking-widest underline uppercase cursor-pointer hover:opacity-70'>
                                     View Portfolio
                                 </p>
