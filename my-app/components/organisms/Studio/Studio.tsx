@@ -6,7 +6,7 @@ import StudioHero from '@/components/molecules/StudioHero/StudioHero'
 import React from 'react'
 
 async function getTeamMembers() {
-  const res = await fetch('https://design-bureau-api.onrender.com/team-members', { cache: "no-store" });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/team-members`, { cache: "no-store" });
   return res.json();
 }
 

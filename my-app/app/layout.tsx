@@ -32,11 +32,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${cormorant.variable} bg-[#F2F0EF] relative min-h-screen overflow-x-hidden flex flex-col`}>
-        <Header />
           <div className="flex-1">
             {children}
           </div>
-        <Footer />
       </body>
     </html>
   );
