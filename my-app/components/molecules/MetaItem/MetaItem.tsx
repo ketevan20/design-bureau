@@ -68,7 +68,12 @@ const MetaItem = ({ project }: MetaItemProps) => {
             <p className='block sm:hidden font-regular text-[12px] tracking-[3%] mb-4'>Located on the 22nd floor of King David Residences in Tbilisi, this apartment was designed as a calm retreat for a frequent traveler. A monochrome palette, curated furniture, and panoramic city views create a refined, hotel-like atmosphere enriched with personal and cultural details.</p>
 
             <p className='font-regular text-[12px] tracking-[3%]'>
-                {project.text}
+                {project.text.split('\n').map((line, i) => (
+                    <span key={i}>
+                        {line}
+                        {i < project.text.split('\n').length - 1 && <br />}
+                    </span>
+                ))}
             </p>
         </div>
     )
