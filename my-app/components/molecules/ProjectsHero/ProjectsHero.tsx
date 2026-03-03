@@ -36,6 +36,7 @@ const ProjectsHero = ({ projects }: ProjectsHeroProps) => {
                     <p onClick={() => setActiveCategory('All')} className={`${activeCategory == 'All' ? 'opacity-100' : 'opacity-50'} cursor-pointer  hover:opacity-100`}>All</p>
                     <p onClick={() => setActiveCategory('architecture')} className={`${activeCategory == 'architecture' ? 'opacity-100' : 'opacity-50'} cursor-pointer  hover:opacity-100`}>Architecture</p>
                     <p onClick={() => setActiveCategory('interior')} className={`${activeCategory == 'interior' ? 'opacity-100' : 'opacity-50'} cursor-pointer  hover:opacity-100`}>interior</p>
+                    <p onClick={() => setActiveCategory('product-design')} className={`${activeCategory == 'product-design' ? 'opacity-100' : 'opacity-50'} cursor-pointer  hover:opacity-100`}>Product</p>
                 </div>
             </div>
             <div ref={sectionRef} className='w-full h-px bg-[#0000005f]'></div>
