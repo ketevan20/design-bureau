@@ -7,7 +7,6 @@ import * as Yup from "yup";
 const schema = Yup.object().shape({
   fullName: Yup.string()
     .required("Can’t be empty")
-    .matches(/^[A-Z][a-z]+(?: [A-Z][a-z]+)+$/, "Enter a valid full name")
     .max(50, "Name can’t be longer than 50 characters"),
   email: Yup.string()
     .required("Can’t be empty")
@@ -94,7 +93,7 @@ const ContactForm = () => {
                 >
                   <option value="architecture">Architecture</option>
                   <option value="interior">Interior Design</option>
-                  <option value="product-design">Branding & Product Design</option>
+                  <option value="product-design">Product Design</option>
                 </Field>
 
                 <ErrorMessage
