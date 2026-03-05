@@ -2,6 +2,7 @@ export type ImageType = {
   _id: string;
   url: string;
   key: string;
+  file?: File;
 };
 
 export type ProjectType = {
