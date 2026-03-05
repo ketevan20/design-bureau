@@ -318,7 +318,29 @@ const ProjectForm = ({ isOpen, setIsOpen, project, setProjectToEdit }: projectFo
                                                         <img src={img.url} className='w-20 h-20 object-cover' />
                                                         <button
                                                             type="button"
-                                                            onClick={() => setFieldValue("images", values.images.filter((_: any, i: number) => i !== index))}
+                                                            onClick={async () => {
+                                                                const imgToRemove = values.images[index];
+                                                                
+                                                                setFieldValue("images", values.images.filter((_: any, i: number) => i !== index));
+
+                                                                if (!imgToRemove.file && project) {
+                                                                    try {
+                                                                        const res = await fetch(
+                                                                            `/api/admin/projects/${project._id}/images/${imgToRemove._id}`,
+                                                                            { method: "DELETE" }
+                                                                        );
+                                                                        if (!res.ok) {
+                                                                            alert("Failed to delete image.");
+                                                                            return;
+                                                                        }
+                                                                    } catch (err) {
+                                                                        console.error(err);
+                                                                        alert("Error deleting image.");
+                                                                        return;
+                                                                    }
+                                                                }
+
+                                                            }}
                                                             className='absolute top-0 right-0 bg-black text-white w-5 h-5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity'
                                                         >
                                                             <X size={10} />
