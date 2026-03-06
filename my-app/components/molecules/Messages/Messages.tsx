@@ -34,7 +34,7 @@ const Messages = () => {
     fetchMessages();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <div className='bg-white p-4'>Loading...</div>;
 
   const deleteMessage = async (messageId: string) => {
     if (!messageId) {

@@ -2,6 +2,7 @@
 import Subtitle from "@/components/atoms/Subtitle/Subtitle";
 import Title from "@/components/atoms/Title/Title";
 import ManageProjects from "@/components/molecules/ManageProjects/ManageProjects";
+import ManageTeam from "@/components/molecules/ManageTeam/ManageTeam";
 import Messages from "@/components/molecules/Messages/Messages";
 import { useRouter } from "next/navigation";
 import React, { useState } from 'react'
@@ -25,13 +26,14 @@ const AdminDashboard = () => {
                 </div>
                 <div className="mt-4 mb-8 flex gap-8 relative">
                     <button onClick={() => setPage('projects')} className={`${page == 'projects' ? 'border-b-2' : 'opacity-50'} cursor-pointer border-black leading-[300%] font-normal text-[clamp(0.75rem,1.2vw,14px)] tracking-[5%] uppercase`}>projects</button>
-                    {/* <button onClick={() => setPage('team')} className={`${page == 'team' ? 'border-b-2': 'opacity-50'} cursor-pointer border-black leading-[300%] font-normal text-[clamp(0.75rem,1.2vw,14px)] tracking-[5%] uppercase`}>team</button> */}
+                    <button onClick={() => setPage('team')} className={`${page == 'team' ? 'border-b-2': 'opacity-50'} cursor-pointer border-black leading-[300%] font-normal text-[clamp(0.75rem,1.2vw,14px)] tracking-[5%] uppercase`}>team</button>
                     <button onClick={() => setPage('messages')} className={`${page == 'messages' ? 'border-b-2' : 'opacity-50'} cursor-pointer border-black leading-[300%] font-normal text-[clamp(0.75rem,1.2vw,14px)] tracking-[5%] uppercase`}>messages</button>
                     <div className='absolute bottom-0 w-full h-px bg-[#0000005f]'></div>
                 </div>
 
                 {page === 'projects' && <ManageProjects />}
                 {page === 'messages' && <Messages />}
+                {page === 'team' && <ManageTeam />}
             </div>
         </div>
     )
