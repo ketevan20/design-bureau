@@ -84,8 +84,8 @@ const ProjectForm = ({ isOpen, setIsOpen, project, setProjectToEdit }: projectFo
                                 });
 
                                 const url = project
-                                    ? `/api/admin/teamMembers/${project._id}`
-                                    : "/api/admin/teamMembers";
+                                    ? `/api/admin/projects/${project._id}`
+                                    : "/api/admin/projects";
 
                                 const method = project ? "PATCH" : "POST";
 
