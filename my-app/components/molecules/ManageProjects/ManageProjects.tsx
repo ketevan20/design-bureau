@@ -21,10 +21,10 @@ const ManageProjects = () => {
         fetchProjects();
     }, []);
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <div className='bg-white p-4'>Loading...</div>;
 
     const deleteProject = async (projectId: string) => {
-        if (!projectId || projectId.length !== 24) {
+        if (!projectId) {
             return alert("Invalid project ID");
         }
 
@@ -47,7 +47,7 @@ const ManageProjects = () => {
         <div className='bg-white p-4'>
             <div className='flex justify-between'>
                 <h1 className='font-cormorant font-bold text-xl'>Manage Projects</h1>
-                <button onClick={() => {setIsOpen(!isOpen); window.scrollTo(0, 0)}} className='bg-black text-white text-[12px] px-4 py-1 flex items-center gap-2 font-normal tracking-[10%] uppercase hover:opacity-70'><Plus size={12} /> Add Project</button>
+                <button onClick={() => {setIsOpen(!isOpen)}} className='bg-black text-white text-[12px] px-4 py-1 flex items-center gap-2 font-normal tracking-[10%] uppercase hover:opacity-70'><Plus size={12} /> Add Project</button>
             </div>
             <div className='w-full h-px bg-[#0000005f] my-4'></div>
             <div className='flex flex-col gap-4'>
@@ -55,14 +55,14 @@ const ManageProjects = () => {
                     allProjects.map((project) =>
                         <div key={project._id} className='border border-[#00000030] p-3 flex justify-between hover:bg-[#F2F0EF]'>
                             <div className='flex items-center gap-4'>
-                                <img src={project.url} alt="" className='w-12 h-12' />
+                                <img src={project.url} alt="" className='w-12 h-12 object-cover' />
                                 <div>
                                     <p className='font-regular text-[12px] sm:text-[clamp(0.75rem,2vh,0.9rem)] leading-4.25 tracking-[20%] uppercase'>{project.name}</p>
                                     <p className='font-regular text-[10px] leading-4.25 tracking-[20%] opacity-60'>{project.category} — {project.location}</p>
                                 </div>
                             </div>
                             <div className='flex gap-4'>
-                                <button onClick={() => {setIsOpen(!isOpen); setProjectToEdit(project); window.scrollTo(0, 0)}} className='hover:text-blue-600'><Edit size={14} /></button>
+                                <button onClick={() => {setIsOpen(!isOpen); setProjectToEdit(project);}} className='hover:text-blue-600'><Edit size={14} /></button>
                                 <button onClick={() => deleteProject(project._id)} className='hover:text-red-600'><Delete size={16} /></button>
                             </div>
                         </div>

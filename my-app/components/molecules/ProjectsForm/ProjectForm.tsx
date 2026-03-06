@@ -51,8 +51,8 @@ const ProjectForm = ({ isOpen, setIsOpen, project, setProjectToEdit }: projectFo
     return (
         <>
             <div className='absolute inset-0 bg-black opacity-30 z-1000'></div>
-            <div className='absolute top-0 left-0 h-screen w-screen'>
-                <div className='bg-white p-4 w-[90%] sm:w-[50%] absolute top-[50%] left-[50%] h-[90%] -translate-[50%] z-10000 overflow-y-scroll'>
+            <div className='fixed inset-0 z-50000 flex items-center justify-center' style={{backgroundColor: '#0e121b3e'}}>
+                <div className='p-4 w-[90%] md:w-[50%] h-[90%] bg-white overflow-y-scroll relative'>
                     <div className='flex justify-between'>
                         <h1 className='font-cormorant font-bold text-xl'><span>{project ? "Edit" : "Create"}</span> project</h1>
                     </div>
@@ -84,8 +84,8 @@ const ProjectForm = ({ isOpen, setIsOpen, project, setProjectToEdit }: projectFo
                                 });
 
                                 const url = project
-                                    ? `/api/admin/projects/${project._id}`
-                                    : "/api/admin/projects";
+                                    ? `/api/admin/teamMembers/${project._id}`
+                                    : "/api/admin/teamMembers";
 
                                 const method = project ? "PATCH" : "POST";
 
@@ -254,7 +254,7 @@ const ProjectForm = ({ isOpen, setIsOpen, project, setProjectToEdit }: projectFo
                                                 />
                                             </label>
                                             {values.mainImage && (
-                                                <img src={values.mainImage} className='w-15 h-15 mt-3' />
+                                                <img src={values.mainImage} className='w-15 h-15 mt-3 object-cover' />
                                             )}
                                             {touched.mainImage && errors.mainImage && (
                                                 <p className='text-[#b04b4b] font-normal tracking-[10%] uppercase text-[10px] mt-1'>{errors.mainImage as string}</p>

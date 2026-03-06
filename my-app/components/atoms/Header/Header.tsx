@@ -22,7 +22,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className='block sm:hidden fixed z-100000 right-3 top-3'>
+            <div className='block sm:hidden fixed z-10000 right-3 top-3'>
                 <button onClick={() => setIsOpen(!isOpen)}>{isOpen ? <X size={24} /> : <Menu size={24} />}</button>
             </div>
             <AnimatePresence>
