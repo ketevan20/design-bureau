@@ -52,7 +52,7 @@ const ProjectForm = ({ isOpen, setIsOpen, project, setProjectToEdit }: projectFo
         <>
             <div className='absolute inset-0 bg-black opacity-30 z-1000'></div>
             <div className='fixed inset-0 z-50000 flex items-center justify-center' style={{backgroundColor: '#0e121b3e'}}>
-                <div className='p-4 w-[90%] md:w-[50%] h-[90%] bg-white overflow-y-scroll relative'>
+                <div className='p-4 w-[90%] md:w-[50%] h-auto max-h-[90%] bg-white overflow-y-scroll relative'>
                     <div className='flex justify-between'>
                         <h1 className='font-cormorant font-bold text-xl'><span>{project ? "Edit" : "Create"}</span> project</h1>
                     </div>

@@ -35,7 +35,7 @@ const TeamForm = ({ isOpen, setIsOpen, member, setMember }: TeamFormProps) => {
     return (
         <>
             <div className='fixed inset-0 z-50000 flex items-center justify-center' style={{ backgroundColor: '#0e121b3e' }}>
-                <div className='h-[90%] p-4 w-[90%] md:w-[50%] bg-white relative overflow-y-scroll'>
+                <div className='h-auto max-h-[90%] p-4 w-[90%] md:w-[50%] bg-white relative overflow-y-scroll'>
                     <div className='flex justify-between'>
                         <h1 className='font-cormorant font-bold text-xl'><span>{member ? "Edit " : "Add new "}</span>team member</h1>
                     </div>
