@@ -21,6 +21,7 @@ const Messages = () => {
         const res = await fetch("/api/admin/messages");
         if (!res.ok) throw new Error("Failed to fetch messages");
         const data = await res.json();
+        data.messages.sort((a: any, b: any) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
         console.log(data);
         setMessages(Array.isArray(data.messages) ? data.messages : []);
       } catch (error: any) {

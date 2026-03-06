@@ -9,6 +9,7 @@ async function getProjects() {
 
 const Projects = async () => {
   const allProjects = await getProjects();
+  allProjects.sort((a: any, b: any) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
 
   return (
     <div className='relative flex flex-col items-center gap-20 mb-20 px-3 sm:px-6 lg:px-16 font-inter'>

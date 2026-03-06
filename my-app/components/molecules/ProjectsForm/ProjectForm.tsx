@@ -45,6 +45,7 @@ const validationSchema = Yup.object({
 const ProjectForm = ({ isOpen, setIsOpen, project, setProjectToEdit }: projectFormProps) => {
     if (!isOpen) return null;
     const [loading, setLoading] = useState(false);
+    const [imagesToDelete, setImagesToDelete] = useState<string[]>([]);
 
 
     return (
@@ -101,6 +102,14 @@ const ProjectForm = ({ isOpen, setIsOpen, project, setProjectToEdit }: projectFo
                                     alert(data.message || "Something went wrong.");
                                     return;
                                 }
+
+                                await Promise.all(
+                                    imagesToDelete.map(imageId =>
+                                        fetch(`/api/admin/projects/${project!._id}/images/${imageId}`, {
+                                            method: "DELETE"
+                                        })
+                                    )
+                                );
 
                                 setIsOpen(false);
                                 setProjectToEdit(null);
@@ -193,7 +202,7 @@ const ProjectForm = ({ isOpen, setIsOpen, project, setProjectToEdit }: projectFo
                                             )}
                                         </div>
                                         <div className='flex-1'>
-                                            <p className='text-[10px] tracking-[20%] opacity-70 uppercase mb-1'>category</p>
+                                            <p className='text-[10px] tracking-[20%] opacity-70 uppercase mb-1'>status</p>
                                             <Field
                                                 as="select"
                                                 name="status"
@@ -256,7 +265,6 @@ const ProjectForm = ({ isOpen, setIsOpen, project, setProjectToEdit }: projectFo
                                         <p className='text-[10px] tracking-[20%] opacity-70 uppercase mb-1'>Area</p>
                                         <Field
                                             name="area"
-                                            type='number'
                                             placeholder="type here..."
                                             className="border p-2 w-full text-[14px] font-normal tracking-[20%] placeholder:text-[#505050] placeholder:font-normal placeholder:tracking-[2%] placeholder:text-[12px]"
                                         />
@@ -320,26 +328,11 @@ const ProjectForm = ({ isOpen, setIsOpen, project, setProjectToEdit }: projectFo
                                                             type="button"
                                                             onClick={async () => {
                                                                 const imgToRemove = values.images[index];
-                                                                
                                                                 setFieldValue("images", values.images.filter((_: any, i: number) => i !== index));
 
                                                                 if (!imgToRemove.file && project) {
-                                                                    try {
-                                                                        const res = await fetch(
-                                                                            `/api/admin/projects/${project._id}/images/${imgToRemove._id}`,
-                                                                            { method: "DELETE" }
-                                                                        );
-                                                                        if (!res.ok) {
-                                                                            alert("Failed to delete image.");
-                                                                            return;
-                                                                        }
-                                                                    } catch (err) {
-                                                                        console.error(err);
-                                                                        alert("Error deleting image.");
-                                                                        return;
-                                                                    }
+                                                                    setImagesToDelete(prev => [...prev, imgToRemove._id]);
                                                                 }
-
                                                             }}
                                                             className='absolute top-0 right-0 bg-black text-white w-5 h-5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity'
                                                         >
@@ -353,7 +346,7 @@ const ProjectForm = ({ isOpen, setIsOpen, project, setProjectToEdit }: projectFo
                                             <p className='text-[#b04b4b] font-normal tracking-[10%] uppercase text-[10px] mt-1'>{errors.images as string}</p>
                                         )}
                                     </div>
-                                    <button type='submit' className='bg-black text-white text-[12px] uppercase tracking-widest py-2 mt-5 hover:opacity-70'>
+                                    <button type='submit' className='bg-black cursor-pointer text-white text-[12px] uppercase tracking-widest py-2 mt-5 disabled:opacity-50 hover:opacity-70' disabled={!dirty}>
                                         {
                                             loading ?
                                                 <motion.div initial={{ rotate: 0 }} animate={{ rotate: 360 }} transition={{ duration: 0.8, repeat: Infinity }} className="m-auto relative w-7 h-7">

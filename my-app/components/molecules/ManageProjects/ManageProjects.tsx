@@ -14,7 +14,7 @@ const ManageProjects = () => {
         const fetchProjects = async () => {
             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects`, { cache: "no-store" });
             const data = await res.json();
-            console.log(data);
+            data.sort((a: any, b: any) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
             setAllProjects(data);
             setLoading(false);
         };
