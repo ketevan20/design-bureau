@@ -27,7 +27,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className='border-t border-[rgba(255,255,255,0.1)] pt-7 flex items-center justify-between font-light text-[10px] leading-3.75 tracking-[1px] text-[rgba(156,163,175,1)]'>
+            <div className='border-t border-[rgba(255,255,255,0.1)] pt-7 flex flex-col sm:flex-row gap-8 sm:items-center justify-between font-light text-[10px] leading-3.75 tracking-[1px] text-[rgba(156,163,175,1)]'>
                 <p>© 2024 DesignBureau. All rights reserved.</p>
                 <p>Co-Founder of Design Georgia</p>
             </div>

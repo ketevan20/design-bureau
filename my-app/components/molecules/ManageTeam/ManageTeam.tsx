@@ -9,13 +9,14 @@ const ManageTeam = () => {
   const [open, setOpen] = useState(false);
   const [memberToEdit, setMemberToEdit] = useState<TeamMemberType | null>(null)
 
+  const fetchTeamMembers = async () => {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/team-members`, { cache: "no-store" });
+    const members = await res.json();
+    setTeamMembers(members);
+    setLoading(false);
+  }
+
   useEffect(() => {
-    const fetchTeamMembers = async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/team-members`, { cache: "no-store" });
-      const members = await res.json();
-      setTeamMembers(members);
-      setLoading(false);
-    }
     fetchTeamMembers();
   }, [])
 
@@ -63,7 +64,7 @@ const ManageTeam = () => {
                 </div>
               </div>
               <div className='flex gap-4'>
-                <button onClick={() => { setMemberToEdit(member); setOpen(true)}} className='hover:text-blue-600'><Edit size={14} /></button>
+                <button onClick={() => { setMemberToEdit(member); setOpen(true) }} className='hover:text-blue-600'><Edit size={14} /></button>
                 <button onClick={() => { deleteTeamMember(member._id) }} className='hover:text-red-600'><Delete size={16} /></button>
               </div>
             </div>
@@ -71,7 +72,7 @@ const ManageTeam = () => {
         }
       </div>
 
-      <TeamForm isOpen={open} setIsOpen={setOpen} member={memberToEdit} setMember={setMemberToEdit}/>
+      <TeamForm isOpen={open} setIsOpen={setOpen} member={memberToEdit} setMember={setMemberToEdit} fetchTeamMembers={fetchTeamMembers}/>
     </div>
   )
 }

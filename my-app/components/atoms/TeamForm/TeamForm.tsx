@@ -11,6 +11,7 @@ type TeamFormProps = {
     setIsOpen: (open: boolean) => void;
     member: TeamMemberType | null;
     setMember: (member: TeamMemberType | null) => void;
+    fetchTeamMembers: () => void;
 }
 
 const validationSchema = Yup.object({
@@ -27,7 +28,7 @@ const validationSchema = Yup.object({
         .required("Main image is required")
 });
 
-const TeamForm = ({ isOpen, setIsOpen, member, setMember }: TeamFormProps) => {
+const TeamForm = ({ isOpen, setIsOpen, member, setMember, fetchTeamMembers }: TeamFormProps) => {
     const [loading, setLoading] = useState(false);
 
     if (!isOpen) return null;
@@ -75,7 +76,7 @@ const TeamForm = ({ isOpen, setIsOpen, member, setMember }: TeamFormProps) => {
 
                                 setIsOpen(false);
                                 setMember(null);
-                                window.location.reload();
+                                fetchTeamMembers();
                             } catch (error) {
                                 console.error(error);
                             } finally {
