@@ -20,9 +20,9 @@ const Footer = () => {
                 <div className='flex-1'>
                     <p className='font-cormorant font-light text-[10.5px] leading-3.5 tracking-[2.1px] text-[rgba(107,114,128,1)] uppercase mb-3 md:mb-5.25'>Follow</p>
                     <div className='flex gap-7 font-light text-[12.3px] leading-[17.5px] tracking-[0%]'>
-                        <p>Instagram</p>
-                        <p>Pinterest</p>
-                        <p>LinkedIn</p>
+                        <a href='https://www.instagram.com/designbureau_studio' target='_blank' rel="noopener noreferrer">Instagram</a>
+                        <a href='https://www.linkedin.com/company/designbureaustudio/' target='_blank' rel="noopener noreferrer">Pinterest</a>
+                        <a href='https://www.facebook.com/DesignBureau.studio/' target='_blank' rel="noopener noreferrer">Facebook</a>
                     </div>
                 </div>
             </div>
