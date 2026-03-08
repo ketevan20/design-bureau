@@ -1,3 +1,4 @@
+import Button from '@/components/atoms/Button/Button'
 import Link from 'next/link'
 import React from 'react'
 
@@ -15,78 +16,93 @@ const Contexts = () => {
 
                 <div className='w-full grid grid-cols-1 sm:grid-cols-2 sm:auto-rows-[clamp(400px,90vh,620px)] gap-5'>
 
-                    <div className='group h-full flex flex-col gap-4 cursor-pointer'>
-                        <div className='flex-1 min-h-0 w-full overflow-hidden'>
-                            <img
-                                src="/high.jpg"
-                                alt="Stamba Hotel"
-                                className='w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 origin-center transition-all duration-1000 ease-out'
-                            />
-                        </div>
-                        <div className='flex-none w-full flex items-center justify-between'>
-                            <div className=''>
-                                <p className='text-[rgba(26,26,26,1)] text-[16px] font-light leading-[20.1px] tracking-[0%] font-cormorant'>Stamba Hotel</p>
-                                <p className='text-[rgba(156,163,175,1)] text-[10px] font-normal leading-[12.3px] tracking-[0.82px]'>Interior — Tbilisi, Georgia</p>
-                            </div>
-                            <p className='text-[rgba(156,163,175,1)] text-[10px] font-normal leading-[12.3px] tracking-[0.82px]'>2018</p>
-                        </div>
-                    </div>
-
-
-                    <div className='h-full flex flex-col gap-4 cursor-pointer justify-center'>
-                        <div className='group flex flex-col gap-4'>
-                            <div className='flex-1 min-h-0 w-full overflow-hidden'>
+                    <Link href={`/projects/nikozi-art-palace`}>
+                        <div className='group h-full flex flex-col gap-4 cursor-pointer'>
+                            <div className='flex-1 relative min-h-0 w-full overflow-hidden'>
                                 <img
-                                    src="/skinfood.svg"
+                                    src="/nikozi.jpeg"
                                     alt="Stamba Hotel"
                                     className='w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 origin-center transition-all duration-1000 ease-out'
                                 />
+                                <Button />
                             </div>
                             <div className='flex-none w-full flex items-center justify-between'>
                                 <div className=''>
-                                    <p className='text-[rgba(26,26,26,1)] text-[16px] font-light leading-[20.1px] tracking-[0%] font-cormorant'>Stamba Hotel</p>
-                                    <p className='text-[rgba(156,163,175,1)] text-[10px] font-normal leading-[12.3px] tracking-[0.82px]'>Interior — Tbilisi, Georgia</p>
+                                    <p className='text-[rgba(26,26,26,1)] text-[16px] font-light leading-[20.1px] tracking-[0%] font-cormorant'>Nikozi art palace</p>
+                                    <p className='text-[rgba(156,163,175,1)] text-[10px] font-normal leading-[12.3px] tracking-[0.82px]'>Architecture — Tbilisi, Georgia</p>
                                 </div>
-                                <p className='text-[rgba(156,163,175,1)] text-[10px] font-normal leading-[12.3px] tracking-[0.82px]'>2018</p>
+                                <p className='text-[rgba(156,163,175,1)] text-[10px] font-normal leading-[12.3px] tracking-[0.82px]'>2020</p>
                             </div>
                         </div>
-                    </div>
+                    </Link>
 
-                    <div className='h-full flex flex-col gap-4 cursor-pointer justify-center'>
-                        <div className='group flex flex-col gap-4'>
-                            <div className='flex-1 min-h-0 w-full overflow-hidden'>
+
+                    <Link href={`/projects/skinfood-flagship-store`}>
+                        <div className='h-full flex flex-col gap-4 cursor-pointer justify-center'>
+                            <div className='group flex flex-col gap-4'>
+                                <div className='relative flex-1 min-h-0 w-full overflow-hidden'>
+                                    <img
+                                        src="/skinfood.svg"
+                                        alt="Stamba Hotel"
+                                        className='w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 origin-center transition-all duration-1000 ease-out'
+                                    />
+                                    <Button />
+                                </div>
+
+                                <div className='flex-none w-full flex items-center justify-between'>
+                                    <div className=''>
+                                        <p className='text-[rgba(26,26,26,1)] text-[16px] font-light leading-[20.1px] tracking-[0%] font-cormorant'>Skinfood flagship store</p>
+                                        <p className='text-[rgba(156,163,175,1)] text-[10px] font-normal leading-[12.3px] tracking-[0.82px]'>Interior — Tbilisi, Georgia</p>
+                                    </div>
+                                    <p className='text-[rgba(156,163,175,1)] text-[10px] font-normal leading-[12.3px] tracking-[0.82px]'>2021</p>
+                                </div>
+                            </div>
+                        </div>
+                    </Link>
+
+
+                    <Link href={`/projects/skinfood-flagship-store`}>
+                        <div className='h-full flex flex-col gap-4 cursor-pointer justify-center'>
+                            <div className='group flex flex-col gap-4'>
+                                <div className='relative flex-1 min-h-0 w-full overflow-hidden'>
+                                    <img
+                                        src="/skinfood.svg"
+                                        alt="Stamba Hotel"
+                                        className='w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 origin-center transition-all duration-1000 ease-out'
+                                    />
+                                    <Button />
+                                </div>
+
+                                <div className='flex-none w-full flex items-center justify-between'>
+                                    <div className=''>
+                                        <p className='text-[rgba(26,26,26,1)] text-[16px] font-light leading-[20.1px] tracking-[0%] font-cormorant'>Skinfood flagship store</p>
+                                        <p className='text-[rgba(156,163,175,1)] text-[10px] font-normal leading-[12.3px] tracking-[0.82px]'>Interior — Tbilisi, Georgia</p>
+                                    </div>
+                                    <p className='text-[rgba(156,163,175,1)] text-[10px] font-normal leading-[12.3px] tracking-[0.82px]'>2021</p>
+                                </div>
+                            </div>
+                        </div>
+                    </Link>
+
+                    <Link href={`/projects/nikozi-art-palace`}>
+                        <div className='group h-full flex flex-col gap-4 cursor-pointer'>
+                            <div className='flex-1 relative min-h-0 w-full overflow-hidden'>
                                 <img
-                                    src="/skinfood.svg"
+                                    src="/nikozi.jpeg"
                                     alt="Stamba Hotel"
                                     className='w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 origin-center transition-all duration-1000 ease-out'
                                 />
+                                <Button />
                             </div>
                             <div className='flex-none w-full flex items-center justify-between'>
                                 <div className=''>
-                                    <p className='text-[rgba(26,26,26,1)] text-[16px] font-light leading-[20.1px] tracking-[0%] font-cormorant'>Stamba Hotel</p>
-                                    <p className='text-[rgba(156,163,175,1)] text-[10px] font-normal leading-[12.3px] tracking-[0.82px]'>Interior — Tbilisi, Georgia</p>
+                                    <p className='text-[rgba(26,26,26,1)] text-[16px] font-light leading-[20.1px] tracking-[0%] font-cormorant'>Nikozi art palace</p>
+                                    <p className='text-[rgba(156,163,175,1)] text-[10px] font-normal leading-[12.3px] tracking-[0.82px]'>Architecture — Tbilisi, Georgia</p>
                                 </div>
-                                <p className='text-[rgba(156,163,175,1)] text-[10px] font-normal leading-[12.3px] tracking-[0.82px]'>2018</p>
+                                <p className='text-[rgba(156,163,175,1)] text-[10px] font-normal leading-[12.3px] tracking-[0.82px]'>2020</p>
                             </div>
                         </div>
-                    </div>
-
-                    <div className='group h-full flex flex-col gap-4 cursor-pointer'>
-                        <div className='flex-1 min-h-0 w-full overflow-hidden'>
-                            <img
-                                src="/high.jpg"
-                                alt="Stamba Hotel"
-                                className='w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 origin-center transition-all duration-1000 ease-out'
-                            />
-                        </div>
-                        <div className='flex-none w-full flex items-center justify-between'>
-                            <div className=''>
-                                <p className='text-[rgba(26,26,26,1)] text-[16px] font-light leading-[20.1px] tracking-[0%] font-cormorant'>Stamba Hotel</p>
-                                <p className='text-[rgba(156,163,175,1)] text-[10px] font-normal leading-[12.3px] tracking-[0.82px]'>Interior — Tbilisi, Georgia</p>
-                            </div>
-                            <p className='text-[rgba(156,163,175,1)] text-[10px] font-normal leading-[12.3px] tracking-[0.82px]'>2018</p>
-                        </div>
-                    </div>
+                    </Link>
 
                 </div>
             </div>
