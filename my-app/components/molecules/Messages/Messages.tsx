@@ -76,11 +76,14 @@ const Messages = () => {
               <div>
                 <p className='font-regular text-[12px] sm:text-[clamp(0.75rem,2vh,0.9rem)] leading-4.25 tracking-[20%] uppercase'>{msg.fullName} — {msg.interestedIn}</p>
                 <p className='font-regular text-[10px] leading-4.25 tracking-[20%] opacity-60'>
-                  {msg.email} — {msg.createdAt ? new Date(msg.createdAt).toLocaleString() : ""}
+                  {msg.email}
+                </p>
+                <p className='font-regular text-[10px] leading-4.25 tracking-[20%] opacity-60'>
+                  {msg.createdAt ? new Date(msg.createdAt).toLocaleString() : ""}
                 </p>
               </div>
               <div className='flex gap-4'>
-                <button onClick={() => deleteMessage(msg._id)} className='hover:text-red-600'><Delete size={16} /></button>
+                <button onClick={() => deleteMessage(msg._id)} className='hover:text-red-600' title='Delete'><Delete size={16} /></button>
               </div>
             </div>
             <div className='border border-[#00000030] p-2 font-regular text-[12px] leading-4.25 tracking-[10%]'>

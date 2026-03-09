@@ -62,8 +62,8 @@ const ManageProjects = () => {
                                 </div>
                             </div>
                             <div className='flex gap-4'>
-                                <button onClick={() => {setIsOpen(!isOpen); setProjectToEdit(project);}} className='hover:text-blue-600'><Edit size={14} /></button>
-                                <button onClick={() => deleteProject(project._id)} className='hover:text-red-600'><Delete size={16} /></button>
+                                <button onClick={() => {setIsOpen(!isOpen); setProjectToEdit(project);}} className='hover:text-blue-600' title='Edit'><Edit size={14} /></button>
+                                <button onClick={() => deleteProject(project._id)} className='hover:text-red-600' title='Delete'><Delete size={16} /></button>
                             </div>
                         </div>
                     )
