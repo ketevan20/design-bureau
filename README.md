@@ -91,7 +91,7 @@ The admin dashboard is protected and requires authentication. Make sure `NEXT_PU
 
 ---
 
-## 🌍 Deployment
+## Deployment
 
 ### Vercel
 
